@@ -5,12 +5,14 @@ interface GetAllProps {
   data?: Multa[] | null;
 }
 
-export const getAllMultas = async (access_token: string): Promise<GetAllProps> => {
+export const getAllMultas = async (
+  access_token: string
+): Promise<GetAllProps> => {
   try {
     const res = await API.get("/multa", {
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${access_token}`
+        Authorization: `Bearer ${access_token}`,
       },
     });
 
@@ -20,15 +22,20 @@ export const getAllMultas = async (access_token: string): Promise<GetAllProps> =
   }
 };
 
-export const updateMulta = async (
-  multa: Multa
-): Promise<{ data: Multa | null; error: unknown }> => {
+export const updateMulta = async ({
+  multa,
+  access_token,
+}: {
+  multa: Multa;
+  access_token: string | null;
+}): Promise<{ data: Multa | null; error: unknown }> => {
   try {
     const { iCodMulta, ...multaBody } = multa;
 
     const res = await API.patch(`/multa/${iCodMulta}`, multaBody, {
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${access_token}`,
       },
     });
 

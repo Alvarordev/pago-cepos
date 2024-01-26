@@ -44,7 +44,7 @@ function App() {
       </section>
 
       <section className="w-full">
-        {multas && <MultaCard multa={filtered} />}
+        {filtered && <MultaCard multa={filtered[0]} />}
       </section>
     </main>
   );

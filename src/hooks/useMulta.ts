@@ -15,6 +15,9 @@ const useMulta = () => {
     const initializeAuth = async () => {
       const { data } = await logIn(authData);
 
+      if (!data) return;
+
+      localStorage.setItem("access-token", data.access_token);
       setToken(data?.access_token);
     };
 
@@ -30,7 +33,7 @@ const useMulta = () => {
 
         if (error) throw Error;
 
-        console.log(data)
+        console.log(data);
         setMultas(data);
       } catch (err) {
         console.log(err);

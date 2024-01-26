@@ -5,11 +5,12 @@ interface GetAllProps {
   data?: Multa[] | null;
 }
 
-export const getAllMultas = async (): Promise<GetAllProps> => {
+export const getAllMultas = async (access_token: string): Promise<GetAllProps> => {
   try {
     const res = await API.get("/multa", {
       headers: {
         "Content-Type": "application/json",
+        "Authorization": `Bearer ${access_token}`
       },
     });
 

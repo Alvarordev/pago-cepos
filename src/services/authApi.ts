@@ -1,6 +1,7 @@
 import { API } from "../utils/api";
 
 export interface AuthData {
+  vCodigoEmpresa: string
   vAliasUsuario: string;
   vClaveUsuario: string;
 }

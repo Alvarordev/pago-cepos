@@ -3,8 +3,9 @@ import { logIn } from "../services/authApi";
 import { getAllMultas } from "../services/multaApi";
 
 const authData = {
-  vAliasUsuario: "usuario1",
-  vClaveUsuario: "usuario1",
+  vCodigoEmpresa: "EMPSA",
+  vAliasUsuario: "sa",
+  vClaveUsuario: "sa"
 };
 
 const useMulta = () => {

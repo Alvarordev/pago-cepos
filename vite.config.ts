@@ -2,8 +2,7 @@ import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
 const cherryPickedKeys = [
-  "REACT_APP_API_URL",
-  "MAPBOX_ACCESS_TOKEN"
+  "API",
 ];
 
 // https://vitejs.dev/config/
